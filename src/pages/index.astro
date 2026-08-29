@@ -1,0 +1,223 @@
+---
+import Base from "../layouts/Base.astro";
+
+const img = {
+  river: "https://images.unsplash.com/photo-1432405972610-aa0fe97d63e5?auto=format&fit=crop&w=2200&q=80",
+  pines: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
+  steam: "https://images.unsplash.com/photo-1544620341-11cb2cd7c6d5?auto=format&fit=crop&w=1600&q=80",
+  cabin: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1400&q=80",
+  lake: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80",
+  train: "https://images.unsplash.com/photo-1474487548417-7816d25c3e7b?auto=format&fit=crop&w=1600&q=80",
+  tower: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Brainerd_Water_Tower.jpg",
+  shops: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Northern_Pacific_Railroad_Shops_Historic_District.jpg",
+};
+
+const years = ["1805 Pike", "1870 The Crossing", "1871 First train", "1873 City", "1875 Trestle falls", "1903 Paper mill", "1921 Water tower", "1922 Strike", "1933 Baby Face", "1950 Paul Bunyan", "1968 Donnybrooke"];
+
+const people = [
+  ["Lyman P. White", "Father of Brainerd", "Civil War quartermaster and land-company agent who arrived by stage in 1870, platted lots, and later served as mayor."],
+  ["Lawrence Brainerd", "Namesake", "Vermont senator, railroad man, and anti-slavery organizer. Local research argues the town was named for him in October 1870."],
+  ["J. Gregory Smith", "Railroad president", "Northern Pacific first president chose the river crossing and rejected Smithville. Gregory Square still carries his middle name."],
+  ["C. Elmer Anderson", "Governor of Minnesota", "Born in Brainerd in 1912 to Finnish immigrant parents. Governor 1951-55, later mayor of the city that raised him."],
+  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884. 212 wins, three World Series titles, and a pioneer of the pitch that became the slider."],
+  ["Leslie Bullet Joe Bush", "World Series pitcher", "Brainerd-born right-hander on the 1923 Yankees — the first championship club of Babe Ruth's New York years."],
+  ["Zane Smith", "Bank clerk, 1933", "Nineteen-year-old messenger who walked into the First National Bank as Nelson's gang held it. Last living witness to the robbery."],
+  ["Leon E. Lum", "Philanthropist", "Attorney who gave the city wooded parkland on Rice Lake — today's Lum Park."],
+  ["George Montgomery", "Track builder", "Retired Northwest Airlines pilot who carved Donnybrooke Speedway through the woods in 1968. It became BIR in 1973."],
+];
+
+const events = [
+  ["1872 · Blueberry War", "Fear, a lynching, and a harvest", "After a girl disappeared near Crow Wing, two Ojibwe men were accused and killed by a mob. Their guilt was never proven. Militia arrived expecting war; Ojibwe families arrived to sell blueberries."],
+  ["July 27, 1875", "The Crossing collapses", "The wooden Mississippi trestle gave way under a freight train. The engineer, the fireman, and two Ojibwe women passengers from Sawyer were killed."],
+  ["1876–1881", "A city without a charter", "Voters chose handyman Thomas Lanihan over Judge C. B. Sleeper. The legislature revoked the city charter for six years."],
+  ["July 1, 1922", "When the shops went quiet", "A national shopmen's strike idled the Northern Pacific works. In a town whose economy was the railroad, unemployment was the whole civic story."],
+  ["October 23, 1933", "Baby Face in the lobby", "Lester Baby Face Nelson's gang waited out the time lock at First National, took about $32,000, and left firing into the lobby. Clerk Zane Smith was punched on his way in."],
+  ["1950 · and after", "From sawlogs to summers", "A talking Paul Bunyan from the Chicago Railroad Fair became the region's mascot. Donnybrooke opened in 1968 and became BIR — Can-Am, Paul Newman, NHRA nationals."],
+];
+
+const timeline = [
+  ["1805", "Pike on Christmas Day", "Lt. Zebulon Pike camps near the future townsite searching for the Mississippi headwaters."],
+  ["1870", "The Crossing is chosen", "J. Gregory Smith picks a crossing seven miles north of Crow Wing. Ogemaqua becomes Brainerd."],
+  ["1871", "A bridge, then a town", "The wooden trestle finishes March 8. The first passenger train follows within days."],
+  ["1873", "City status", "Brainerd is organized as a city on March 6. Gregory Square is reserved at the center of the plat."],
+  ["1875", "The trestle falls", "July 27: locomotive and 22 cars plunge into the river. Four people die."],
+  ["1876", "Charter revoked", "The legislature strips city status for six years after an unexpected mayoral election."],
+  ["1903", "Paper arrives", "Northwest Paper builds Brainerd's first pulp mill."],
+  ["1921", "The concrete tower", "The nation's first all-concrete municipal water tower becomes the city's signature landmark."],
+  ["1922", "Railroad strike", "The shopmen walk out. Most of the town's paychecks go quiet."],
+  ["1933", "Baby Face Nelson", "October 23: First National Bank robbed of about $32,000. No one is killed."],
+  ["1950", "Paul comes home", "A 26-foot talking Paul Bunyan opens Paul Bunyan Land."],
+  ["1968", "Donnybrooke", "A 3-mile road course is cut through woods south of North Long Lake."],
+];
+---
+
+<Base>
+  <section class="hero" id="top">
+    <img class="hero-media" src={img.river} alt="River and forest at dusk" />
+    <div class="hero-copy wrap">
+      <p class="eyebrow reveal">A history of the crossing</p>
+      <h1 class="reveal delay-1">Where the railroad met the river.</h1>
+      <p class="lede reveal delay-2">Before the lakes were a weekend, before Paul Bunyan learned children's names, this was Ojibwe ground and then a Northern Pacific machine shop in the pines.</p>
+      <p class="scroll-cue">Scroll the century</p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      {[...years, ...years].map((y) => <span>{y} *</span>)}
+    </div>
+  </div>
+
+  <section class="chapter paper" id="origins">
+    <span class="chapter-num">01</span>
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Chapter I</p>
+        <h2>A river already named</h2>
+        <div class="prose">
+          <p>The land that became Brainerd was Ojibwe territory — hunting ground, blueberry field, and a working stretch of the Mississippi long before surveyors arrived. Crow Wing Village, a few miles downstream near Fort Ripley, was the earlier meeting place.</p>
+          <p>European-American explorers wrote the site down on Christmas Day, 1805, when Zebulon Pike paused here hunting the river's headwaters. The town waited sixty-five years. What changed everything was a railroad that needed to get across the Mississippi on its way to the Pacific.</p>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src={img.pines} alt="Pine forest in northern light" />
+        <figcaption class="caption">The city-of-pines before the shops.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter" id="rails">
+    <span class="chapter-num">02</span>
+    <div class="wrap split">
+      <figure class="photo">
+        <img src={img.steam} alt="Steam locomotive at a historic station" />
+        <figcaption class="caption">A town built so locomotives could cross — and be repaired.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Chapter II · 1870</p>
+        <h2>Named in a boardroom</h2>
+        <div class="prose">
+          <p>Northern Pacific president John Gregory Smith chose a crossing seven miles north of Crow Wing. For a few weeks the camp was called Ogemaqua, then The Crossing.</p>
+          <p>On October 1, 1870, directors renamed it Brainerd. Popular memory says Smith honored his wife, Ann Eliza Brainerd Smith. A later Tribune interview quoted him honoring her father, Vermont senator Lawrence Brainerd. Both names stuck: the town for the family, Gregory Square for Smith.</p>
+          <p>The wooden trestle opened March 8, 1871. Engineer Adam Brown brought the first passenger train across. Crow Wing emptied. Brainerd became a city on March 6, 1873.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="film" aria-label="Historic photographs">
+    <figure>
+      <img src={img.shops} alt="Northern Pacific shops historic district" />
+      <figcaption class="caption">NP shops district · McGhiever / Wikimedia</figcaption>
+    </figure>
+    <figure>
+      <img src={img.tower} alt="Brainerd concrete water tower" />
+      <figcaption class="caption">Water tower, 1918-21 · Paul Bunyan's flashlight</figcaption>
+    </figure>
+    <figure>
+      <img src={img.train} alt="Passenger train" />
+      <figcaption class="caption">By the 1920s, nine in ten households lived off the railroad.</figcaption>
+    </figure>
+    <figure>
+      <img src={img.lake} alt="Northern lake" />
+      <figcaption class="caption">More than 460 lakes within 25 miles.</figcaption>
+    </figure>
+  </section>
+
+  <section class="chapter paper" id="events">
+    <span class="chapter-num">03</span>
+    <div class="wrap">
+      <p class="kicker">Chapter III</p>
+      <h2>Years the town still tells</h2>
+      <div class="grid-2">
+        {events.map(([meta, title, text]) => (
+          <article class="card">
+            <p class="meta">{meta}</p>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter moss">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Folklore</p>
+        <h2>The giant who advertised the woods</h2>
+        <div class="prose">
+          <p>Paul Bunyan was not born in Brainerd. The camp tales grew up in Great Lakes logging country and were popularized by Minnesota ad man William Laughead. What Brainerd did was give the giant a job.</p>
+          <p>In 1949 a 26-foot mechanized Paul came home from the Chicago Railroad Fair. Paul Bunyan Land opened in 1950. The historic water tower picked up a second name: Paul Bunyan's flashlight — or his golf tee.</p>
+          <p>The legend is affectionate and incomplete. It celebrates the lumberjack and says little about the Ojibwe homelands the mills overran. Both stories belong on the same map.</p>
+        </div>
+      </div>
+      <div>
+        <p class="quote">The Big Fellow has settled down at last. Paul Bunyan has chosen Brainerd for his home.</p>
+        <p class="caption">Brainerd Dispatch, October 12, 1949</p>
+        <figure class="photo" style="min-height:240px;margin-top:1.4rem">
+          <img src={img.cabin} alt="Northwoods cabin country" style="min-height:240px" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="people">
+    <span class="chapter-num">04</span>
+    <div class="wrap">
+      <p class="kicker">Faces of the crossing</p>
+      <h2>People the town remembers</h2>
+      <div class="grid-3">
+        {people.map(([name, role, text]) => (
+          <article class="card">
+            <p class="meta">{role}</p>
+            <h3>{name}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter paper" id="timeline">
+    <div class="wrap">
+      <p class="kicker">A condensed century</p>
+      <h2>Timeline</h2>
+      <div class="timeline">
+        {timeline.map(([year, title, text]) => (
+          <div class="t-item">
+            <div class="year">{year}</div>
+            <div>
+              <h3>{title}</h3>
+              <p class="prose">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="wrap">
+      <p class="kicker">Still here</p>
+      <h2>What remains</h2>
+      <div class="prose">
+        <p>The Northern Pacific is gone as a name. BNSF still works a smaller shop. The brick shops district is on the National Register. The Carnegie library and courthouse still hold their corners. Gregory Square is still a square. The Mississippi is still the reason anyone stopped.</p>
+        <p>About 14,400 people live in the city. The rest of the story happens on weekends, on docks, and on the Paul Bunyan State Trail.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>1870</b><span>Railroad town founded</span></div>
+        <div class="stat"><b>14,395</b><span>Residents in 2020</span></div>
+        <div class="stat"><b>460+</b><span>Lakes within 25 miles</span></div>
+        <div class="stat"><b>26 ft</b><span>Talking Paul at the park</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Built with Astro. Source: <a href="https://github.com/KristineMK72/brainerd-history">github.com/KristineMK72/brainerd-history</a>.</p>
+      <p style="margin-top:0.8rem">Sources include the Crow Wing County Historical Society, City of Brainerd History Notes, Brainerd Dispatch sesquicentennial reporting, National Register listings, the Baseball Hall of Fame, and BIR official history.</p>
+    </div>
+  </footer>
+</Base>
