@@ -1,21 +1,35 @@
 ---
 import Base from "../layouts/Base.astro";
 
+const wm = (file: string) =>
+  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(file)}`;
+
 const img = {
-  pines: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
-  steam: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=80",
-  cabin: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1600&q=80",
+  park: wm("Crow Wing State Park.jpg"),
+  hole: "https://tile.loc.gov/storage-services/service/pnp/ppmsca/75500/75537v.jpg",
+  holeDag: wm("Hole-In-The-Day daguerreotype 1855.jpg"),
+  shops: wm("Northern Pacific Railroad Shops Historic District.jpg"),
+  shopsClose: wm("NP Shops 1.jpg"),
+  roundhouse: wm("Northern Pacific Railroad Roundhouse at Brainerd - DPLA - ab0ef83c6fc533a4faa33e9814d102dd.jpg"),
+  bridge: wm("Northern Pacific Headquarters and Railroad Bridge at Brainerd - DPLA - a3f7f39f59821fd339f1a36120b4c05e.jpg"),
+  locos: wm("Two Northern Pacific Locomotives Near Brainerd - DPLA - 418d11e8198ff674f718d3102280ce2d.jpg"),
+  downtown: wm("Brainerd MN - 1922.jpg"),
+  tower: wm("Brainerd Water Tower.jpg"),
+  towerWide: wm("City of Brainerd, Minnesota - Water Tower (39818204500).jpg"),
+  library: wm("Brainerd Carnegie Library 2016.jpg"),
+  court: wm("Historic Crow Wing County Court House, Brainerd, Minnesota (41585718562).jpg"),
+  paulBaxter: "https://tile.loc.gov/storage-services/service/pnp/mrg/03700/03754r.jpg",
+  paulFarm: wm("Paulbunyanland.jpg"),
+  paulSouth: wm("Paul Bunyan Statue - South of Brainerd (43610191462).jpg"),
+  paulChild: wm("Paul Bunyan Scenic Byway - Child and Paul Bunyan - NARA - 7720971.jpg"),
+  bender: "https://tile.loc.gov/storage-services/service/pnp/cph/3b40000/3b43000/3b43900/3b43947r.jpg",
+  anderson: wm("C. Elmer Anderson.jpg"),
+  bir: wm("2017 Lucas Oil NHRA Nationals at Brainerd International Raceway (35885672854).jpg"),
+  birOld: wm("BrainerdInternationalRacewayMay1997.jpg"),
   lake: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80",
-  chain: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=80",
   dock: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?auto=format&fit=crop&w=1800&q=80",
-  tower: "https://commons.wikimedia.org/wiki/Special:FilePath/Brainerd_Water_Tower.jpg",
   ice: "https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=1800&q=80",
-  iceCrowd: "https://images.unsplash.com/photo-1418985991508-e47386d96a71?auto=format&fit=crop&w=1800&q=80",
-  cars: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80",
   golf: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1600&q=80",
-  resort: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80",
-  fair: "https://images.unsplash.com/photo-1505731132164-cca875859828?auto=format&fit=crop&w=1600&q=80",
-  barn: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80",
 };
 
 const years = [
@@ -32,19 +46,19 @@ const years = [
 ];
 
 const people = [
-  ["Bagone-giizhig the Elder", "Mississippi Ojibwe", "Born about 1800 on Madeline Island. In 1836 he moved his band to Gull Lake and built a regional leadership the Americans treated as head chief. He died in 1847 when a wagon wheel crushed him at the Mississippi crossing at Little Falls."],
-  ["Bagone-giizhig the Younger", "Hole-in-the-Day", "Born Gwiiwizens — Boy — about 1825. Took his father's name at twenty. Negotiated treaties, kept a house on Gull, and was shot on the road toward Crow Wing on June 27, 1868. The bay still carries the English name."],
-  ["Guy Doud", "1986 National Teacher of the Year", "Wadena-born, Brainerd-raised. English at Brainerd High from 1975. On April 14, 1986, Reagan handed him the crystal apple at the White House. He said he taught because teachers had loved a kid the rest of the room had given up on. Later a speaker, pastor, and author of Molder of Dreams."],
-  ["Sherm Levis", "Brought Paul north", "With Roy Kuemicheal he bought the Chicago Railroad Fair giant after the 1948–49 seasons and sat him at Highways 210 and 371. Oscar Larson hauled him up in pieces and bolted him together for the 1950 opening."],
-  ["Dick Rademacher", "This Old Farm", "Started collecting in the 1950s and built a pioneer village on the family farm east of town. The 160 acres later swallowed a whole amusement park. He died in April 2024."],
-  ["Al Rademacher & Lois Moon", "Saved the giant", "Went to McFarland in 2003 to buy a train and a building for Dad's village. Walked out owning Paul, Babe, and the rides. Moved the 26-foot man on his back by trailer that September."],
-  ["Jack & Jim Madden", "Gull Lake resort men", "Jack summered at Pine Beach in 1931, then leased a failing Depression golf course with uncle Tom for $500. The brothers bought it with nothing down and spent the next forty years turning a peninsula into Madden's."],
-  ["Merrill & Louise Cragun", "Paul Bunyan Inc.", "In 1934 they registered Paul Bunyan Inc. to sell the lakes. With Jack Madden they staged the first Paul Bunyan parade in 1936. In 1940 they bought a swampy seven-acre hill on Steamboat Bay."],
-  ["Dutch & Irma Cragun", "A legend on the lake", "Dutch's first job, at nine, was worms and minnows. He took over in 1957, married Irma in 1965, and built year-round rooms and 54 holes of golf. In 2025, at 93, he sold after 85 family years."],
-  ["George Montgomery", "Donnybrooke builder", "A retired Northwest Airlines pilot who wanted somewhere to race his Shelby 427 Cobra. He carved a 3.1-mile course south of North Long Lake in 1968."],
-  ["Jerry Hansen", "BIR's second life", "Winningest amateur in SCCA history. Bought the foreclosed track in 1973, renamed it Brainerd International Raceway, and put Mario Andretti on the board."],
-  ["C. Elmer Anderson", "Governor of Minnesota", "Born in Brainerd in 1912. Governor 1951–55, later mayor of the city that raised him."],
-  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884 to an Ojibwe mother. 212 wins, three World Series titles."],
+  { name: "Bagone-giizhig the Elder", role: "Mississippi Ojibwe", text: "Born about 1800 on Madeline Island. In 1836 he moved his band to Gull Lake and built a regional leadership the Americans treated as head chief. He died in 1847 when a wagon wheel crushed him at the Mississippi crossing at Little Falls.", photo: img.holeDag },
+  { name: "Bagone-giizhig the Younger", role: "Hole-in-the-Day", text: "Born Gwiiwizens — Boy — about 1825. Took his father's name at twenty. Negotiated treaties, kept a house on Gull, and was shot on the road toward Crow Wing on June 27, 1868. The bay still carries the English name.", photo: img.hole },
+  { name: "Guy Doud", role: "1986 National Teacher of the Year", text: "Wadena-born, Brainerd-raised. English at Brainerd High from 1975. On April 14, 1986, Reagan handed him the crystal apple at the White House. He said he taught because teachers had loved a kid the rest of the room had given up on. Later a speaker, pastor, and author of Molder of Dreams." },
+  { name: "Sherm Levis", role: "Brought Paul north", text: "With Roy Kuemicheal he bought the Chicago Railroad Fair giant after the 1948–49 seasons and sat him at Highways 210 and 371. Oscar Larson hauled him up in pieces and bolted him together for the 1950 opening." },
+  { name: "Dick Rademacher", role: "This Old Farm", text: "Started collecting in the 1950s and built a pioneer village on the family farm east of town. The 160 acres later swallowed a whole amusement park. He died in April 2024." },
+  { name: "Al Rademacher & Lois Moon", role: "Saved the giant", text: "Went to McFarland in 2003 to buy a train and a building for Dad's village. Walked out owning Paul, Babe, and the rides. Moved the 26-foot man on his back by trailer that September." },
+  { name: "Jack & Jim Madden", role: "Gull Lake resort men", text: "Jack summered at Pine Beach in 1931, then leased a failing Depression golf course with uncle Tom for $500. The brothers bought it with nothing down and spent the next forty years turning a peninsula into Madden's." },
+  { name: "Merrill & Louise Cragun", role: "Paul Bunyan Inc.", text: "In 1934 they registered Paul Bunyan Inc. to sell the lakes. With Jack Madden they staged the first Paul Bunyan parade in 1936. In 1940 they bought a swampy seven-acre hill on Steamboat Bay." },
+  { name: "Dutch & Irma Cragun", role: "A legend on the lake", text: "Dutch's first job, at nine, was worms and minnows. He took over in 1957, married Irma in 1965, and built year-round rooms and 54 holes of golf. In 2025, at 93, he sold after 85 family years." },
+  { name: "George Montgomery", role: "Donnybrooke builder", text: "A retired Northwest Airlines pilot who wanted somewhere to race his Shelby 427 Cobra. He carved a 3.1-mile course south of North Long Lake in 1968." },
+  { name: "Jerry Hansen", role: "BIR's second life", text: "Winningest amateur in SCCA history. Bought the foreclosed track in 1973, renamed it Brainerd International Raceway, and put Mario Andretti on the board." },
+  { name: "C. Elmer Anderson", role: "Governor of Minnesota", text: "Born in Brainerd in 1912. Governor 1951–55, later mayor of the city that raised him.", photo: img.anderson },
+  { name: "Charles Albert Bender", role: "Hall of Fame pitcher", text: "Born in Crow Wing County in 1884 to an Ojibwe mother. 212 wins, three World Series titles.", photo: img.bender },
 ];
 
 const events = [
@@ -88,7 +102,7 @@ const timeline = [
 
 <Base>
   <section class="hero" id="top">
-    <img class="hero-media" src={img.chain} alt="Lake country winding through pine forest at dusk" />
+    <img class="hero-media" src={img.park} alt="Crow Wing State Park — the river meeting south of Brainerd" />
     <div class="hero-copy wrap">
       <p class="eyebrow reveal">A history of the crossing</p>
       <h1 class="reveal delay-1">Railroad town. Lake town. Race town.</h1>
@@ -114,8 +128,8 @@ const timeline = [
         </div>
       </div>
       <figure class="photo">
-        <img src={img.pines} alt="Pine forest in northern light" />
-        <figcaption class="caption">The city-of-pines before the shops — and before the shops, a village on Gull.</figcaption>
+        <img src={img.park} alt="Crow Wing State Park at the meeting of two rivers" />
+        <figcaption class="caption">Crow Wing State Park — the older meeting place, ten miles south of the shops.</figcaption>
       </figure>
     </div>
   </section>
@@ -130,11 +144,13 @@ const timeline = [
       </div>
       <div class="grid-2" style="margin-top:2.2rem">
         <article class="card">
+          <img class="card-photo face" src={img.holeDag} alt="Daguerreotype of Hole-in-the-Day, 1855, wearing three peace medals" />
           <p class="meta">The Elder · c. 1800–1847</p>
           <h3>A village on Gull</h3>
           <p>Bagone-giizhig the Elder was born on Madeline Island. Around 1836 he moved his band from Sandy Lake to Gull Lake and founded the Mississippi Ojibwe community the treaties later treated as central. Families kept a sugar bush between Gull, Round, and North Long. In May 1847 he fell from a wagon at Little Falls. The wheel crushed his chest. The name passed to his son.</p>
         </article>
         <article class="card">
+          <img class="card-photo face" src={img.hole} alt="Joel E. Whitney carte de visite of Bagone-giizhig the Younger" />
           <p class="meta">The Younger · c. 1825–1868</p>
           <h3>Gwiiwizens, then the name</h3>
           <p>Born Gwiiwizens — Boy. At Fond du Lac in 1847 he claimed to be first chief of all Minnesota Ojibwe. He sat in the 1855 and 1867 treaties, kept a house on Gull, and told people not to move to White Earth until the promises were built. On June 27, 1868, he was shot on the road toward Crow Wing.</p>
@@ -147,8 +163,8 @@ const timeline = [
     <span class="chapter-num">03</span>
     <div class="wrap split">
       <figure class="photo">
-        <img src={img.steam} alt="Steam locomotive at a historic station" />
-        <figcaption class="caption">A town built so locomotives could cross and be repaired.</figcaption>
+        <img src={img.shops} alt="Northern Pacific Railroad Shops Historic District in Brainerd" />
+        <figcaption class="caption">The NP shops — by the 1920s, nine in ten households lived off this paycheck.</figcaption>
       </figure>
       <div>
         <p class="kicker">Chapter III · 1870</p>
@@ -158,24 +174,48 @@ const timeline = [
         </div>
       </div>
     </div>
+    <div class="wrap" style="margin-top:2.6rem">
+      <div class="grid-3">
+        <figure class="photo" style="min-height:220px">
+          <img src={img.roundhouse} alt="Northern Pacific roundhouse at Brainerd" style="min-height:220px" />
+          <figcaption class="caption">The roundhouse — locomotives turned and slept here.</figcaption>
+        </figure>
+        <figure class="photo" style="min-height:220px">
+          <img src={img.bridge} alt="Northern Pacific headquarters and wooden railroad bridge at Brainerd" style="min-height:220px" />
+          <figcaption class="caption">Headquarters and the wooden Mississippi bridge, 1870s.</figcaption>
+        </figure>
+        <figure class="photo" style="min-height:220px">
+          <img src={img.downtown} alt="Aerial view of Brainerd in 1922" style="min-height:220px" />
+          <figcaption class="caption">Brainerd from the air, 1922 — shops still at the center.</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
-  <section class="film" aria-label="Photographs of the lakes and town">
+  <section class="film" aria-label="Archive photographs of Brainerd">
     <figure>
       <img src={img.tower} alt="Brainerd historic concrete water tower" />
-      <figcaption class="caption">The 1918–21 water tower — Paul Bunyan's flashlight</figcaption>
+      <figcaption class="caption">The 1918–21 water tower — first of its kind in the U.S.</figcaption>
     </figure>
     <figure>
-      <img src={img.chain} alt="Connected lakes winding through pine forest" />
-      <figcaption class="caption">The Gull Lake chain look — water folded into the pines</figcaption>
+      <img src={img.locos} alt="Two Northern Pacific locomotives near Brainerd" />
+      <figcaption class="caption">NP power near the crossing</figcaption>
     </figure>
     <figure>
-      <img src={img.fair} alt="Carnival lights and a ferris wheel at dusk" />
-      <figcaption class="caption">The amusement years — first at 210 and 371, now on the farm</figcaption>
+      <img class="face" src={img.paulBaxter} alt="John Margolies photograph of the talking Paul Bunyan at the Baxter amusement park, 2003" />
+      <figcaption class="caption">Paul at the Baxter corner, 2003 — the year he moved</figcaption>
     </figure>
     <figure>
-      <img src={img.iceCrowd} alt="Snow-covered northern lake country in winter" />
-      <figcaption class="caption">The same water in January — Ice Extravaganza weather</figcaption>
+      <img src={img.library} alt="Brainerd Carnegie Library" />
+      <figcaption class="caption">Carnegie Library, 206 N 7th — opened 1904</figcaption>
+    </figure>
+    <figure>
+      <img src={img.court} alt="Historic Crow Wing County Courthouse in downtown Brainerd" />
+      <figcaption class="caption">Crow Wing County Courthouse</figcaption>
+    </figure>
+    <figure>
+      <img src={img.paulFarm} alt="Paul Bunyan Land at This Old Farm east of Brainerd" />
+      <figcaption class="caption">This Old Farm after the 2003 move</figcaption>
     </figure>
   </section>
 
@@ -191,8 +231,8 @@ const timeline = [
         </div>
       </div>
       <figure class="photo">
-        <img src={img.chain} alt="Aerial-looking view of a pine-ringed lake chain" />
-        <figcaption class="caption">Eight lakes and two bays. Gull is the big water.</figcaption>
+        <img src={img.dock} alt="Pine-ringed northern lake with a wooden dock" />
+        <figcaption class="caption">The look the resorts sold: water folded into the pines.</figcaption>
       </figure>
     </div>
   </section>
@@ -213,7 +253,7 @@ const timeline = [
           <p>Jack Madden leased a failing Depression golf course in 1932 for $500, then bought it with nothing down. Fourth generation still runs the same 1,000-acre peninsula.</p>
         </article>
         <article class="card">
-          <img class="card-photo" src={img.resort} alt="Lakeside resort lodge among trees" />
+          <img class="card-photo" src={img.lake} alt="Northern lake at dusk" />
           <p class="meta">Cragun's Resort · 1940–2025 in the family</p>
           <h3>A swamp, a gamble</h3>
           <p>Merrill and Louise bought seven acres on Steamboat Bay in 1940. Dutch took over in 1957 and built 54 holes. In 2025, at 93, he sold to Leisure Hotels of Baxter.</p>
@@ -233,12 +273,14 @@ const timeline = [
 
       <div class="grid-2" style="margin-top:2.4rem">
         <article class="card">
+          <img class="card-photo face" src={img.paulBaxter} alt="Talking Paul Bunyan statue at the Baxter amusement park in 2003, photographed by John Margolies" />
           <p class="meta">The Baxter years</p>
           <h3>Hello, and your name</h3>
           <p>Paul Bunyan Center — later the Amusement Center, later the Land — grew up around that stump. Size-80 boots. A 500-pound ax. A belt twelve and a half feet around. Babe the Blue Ox joined him; Sport the Reversible Dog too. In 1978 he got a new head and shirt so he could blink, move his mouth, and raise a hand. A hidden operator learned first names and hometowns. Kids either ran toward him or would not go near.</p>
           <p>By 1963 the twenty-week season drew about 200,000 people. Holiday, Redbook, and National Geographic printed the place. Don and Patti McFarland later ran it — Patti’s family had owned the corner. Attendance slid. In 2003 they announced a close and an auction. Governor Pawlenty said losing Paul and Babe would be “a kick in the cultural groin.” Buyers as far as South Dakota wanted the statue. The old neighborhood was slated for a department store.</p>
         </article>
         <article class="card">
+          <img class="card-photo" src={img.paulFarm} alt="Paul Bunyan Land after the move to This Old Farm" />
           <p class="meta">This Old Farm · Highway 18</p>
           <h3>They went for a train</h3>
           <p>Dick Rademacher had been collecting since the 1950s and had turned the family farm east of Brainerd into This Old Farm — a pioneer village of moved buildings and antique iron on about 160 acres. His son Al went to McFarland in 2003 to buy a train and one building for the village. He walked out having bought the amusement park. Sister Lois Moon signed on before the ink dried.</p>
@@ -249,8 +291,8 @@ const timeline = [
 
     <div class="wrap split" style="margin-top:3rem">
       <figure class="photo">
-        <img src={img.barn} alt="Weathered barn and farm fields" />
-        <figcaption class="caption">The farm that swallowed a carnival — Highway 18 east of town.</figcaption>
+        <img src={img.paulSouth} alt="Paul Bunyan statue south of Brainerd after the farm move" />
+        <figcaption class="caption">The same giant, farther east — Highway 18.</figcaption>
       </figure>
       <div>
         <p class="kicker">Pioneer Village · Disney leftover</p>
@@ -282,8 +324,14 @@ const timeline = [
         </div>
       </div>
       <figure class="photo">
-        <img src={img.cars} alt="Sports car on an open stretch of pavement" />
-        <figcaption class="caption">A 3.1-mile road course and a quarter-mile drag strip in the pines.</figcaption>
+        <img src={img.bir} alt="NHRA drag racing at Brainerd International Raceway, 2017 Lucas Oil Nationals" />
+        <figcaption class="caption">Lucas Oil NHRA Nationals at BIR, 2017 — same property as Donnybrooke.</figcaption>
+      </figure>
+    </div>
+    <div class="wrap" style="margin-top:2.2rem">
+      <figure class="photo" style="min-height:280px">
+        <img src={img.birOld} alt="Brainerd International Raceway in May 1997" style="min-height:280px" />
+        <figcaption class="caption">BIR in May 1997 — road course in the pines before the next generation of grandstands.</figcaption>
       </figure>
     </div>
   </section>
@@ -292,8 +340,8 @@ const timeline = [
     <span class="chapter-num">08</span>
     <div class="wrap split">
       <figure class="photo">
-        <img src={img.ice} alt="Vast frozen northern lake under winter sky" />
-        <figcaption class="caption">Hole-in-the-Day Bay in January — a city that lasts three hours.</figcaption>
+        <img src={img.ice} alt="Frozen northern lake under winter sky" />
+        <figcaption class="caption">January weather on a Crow Wing County lake — the Extravaganza itself is still mostly private snapshots.</figcaption>
       </figure>
       <div>
         <p class="kicker">Gull Lake · every January</p>
@@ -322,8 +370,13 @@ const timeline = [
       <p class="kicker">Faces of the crossing</p>
       <h2>People the town remembers</h2>
       <div class="grid-3">
-        {people.map(([name, role, text]) => (
-          <article class="card"><p class="meta">{role}</p><h3>{name}</h3><p>{text}</p></article>
+        {people.map((p) => (
+          <article class="card">
+            {p.photo && <img class="card-photo face" src={p.photo} alt={p.name} />}
+            <p class="meta">{p.role}</p>
+            <h3>{p.name}</h3>
+            <p>{p.text}</p>
+          </article>
         ))}
       </div>
     </div>
@@ -360,7 +413,8 @@ const timeline = [
   <footer>
     <div class="wrap">
       <p>Built with Astro. <a href="https://github.com/KristineMK72/brainerd-history">GitHub</a> · <a href="https://brainerd-history.vercel.app">Live site</a></p>
-      <p style="margin-top:0.8rem">Sources: MNopedia; Anton Treuer; Crow Wing County Historical Society; Brainerd Dispatch (including 2003 move coverage and 2024 Progress issue); Paul Bunyan Land / This Old Farm; Madden's and Cragun's histories; BIR; Jaycees; Reagan Library reporting on Guy Doud. Landscape and carnival photos are Unsplash stand-ins; the water tower is Wikimedia Commons (Todd Murray).</p>
+      <p style="margin-top:0.8rem">Sources: MNopedia; Anton Treuer; Crow Wing County Historical Society; Brainerd Dispatch; Paul Bunyan Land / This Old Farm; Madden's and Cragun's histories; BIR; Jaycees; Reagan Library reporting on Guy Doud.</p>
+      <p style="margin-top:0.6rem">Photographs: Library of Congress (Joel E. Whitney / Hole-in-the-Day; John Margolies Roadside America, 2003 Paul; Bain Collection, Charles Bender); Wikimedia Commons and DPLA (NP shops, roundhouse, 1870s bridge, 1922 aerial, water tower, Carnegie Library, Crow Wing County Courthouse, Crow Wing State Park, Paul Bunyan Land / Mykl Roventine, BIR 1997 and 2017 Nationals, C. Elmer Anderson). A few lake and winter frames remain Unsplash stand-ins where no free Gull Lake or Ice Extravaganza photograph could be licensed.</p>
     </div>
   </footer>
 </Base>

@@ -46,6 +46,7 @@ h2 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); margin-bottom: 1.3rem; }
 .photo { position: relative; overflow: hidden; min-height: 420px; border-radius: 4px; }
 .photo img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; transform: scale(1.04); transition: transform 1.2s ease; }
 .photo:hover img { transform: scale(1.1); }
+.photo.portrait img { object-position: top center; }
 .caption { margin-top: .7rem; font-family: Outfit, sans-serif; font-size: .72rem; letter-spacing: .06em; color: var(--muted); }
 .chapter:not(.paper) .caption { color: rgba(244,234,211,.62); }
 .chapter-num { font-family: Fraunces, serif; font-size: clamp(6rem, 16vw, 14rem); line-height: .75; color: rgba(212,176,106,.12); position: absolute; top: 1.2rem; right: 4vw; pointer-events: none; }
@@ -58,11 +59,13 @@ h2 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); margin-bottom: 1.3rem; }
 .card h3 { font-size: 1.4rem; margin: .35rem 0 .45rem; line-height: 1.15; }
 .card p + p { margin-top: .75rem; }
 .card-photo { width: 100%; height: 190px; object-fit: cover; border-radius: 4px; margin: 0 0 1rem; }
+.card-photo.face { height: 240px; object-position: top center; }
 .meta { font-family: Outfit, sans-serif; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); }
 .chapter:not(.paper) .meta { color: var(--gold); }
 .film { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 34vw); gap: .75rem; overflow-x: auto; padding: 0 1.2rem 1rem; scroll-snap-type: x mandatory; }
 .film figure { scroll-snap-align: start; }
 .film img { height: 360px; width: 100%; object-fit: cover; border-radius: 4px; }
+.film img.face { object-position: top; }
 .quote { font-family: Fraunces, serif; font-size: clamp(1.7rem, 3.6vw, 2.7rem); line-height: 1.18; max-width: 16ch; }
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
 .stat { border-top: 1px solid var(--gold); padding-top: .9rem; }
