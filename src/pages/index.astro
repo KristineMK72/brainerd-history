@@ -2,70 +2,69 @@
 import Base from "../layouts/Base.astro";
 
 const img = {
-  river: "https://images.unsplash.com/photo-1432405972610-aa0fe97d63e5?auto=format&fit=crop&w=2200&q=80",
   pines: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
   steam: "https://images.unsplash.com/photo-1544620341-11cb2cd7c6d5?auto=format&fit=crop&w=1600&q=80",
-  cabin: "https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1400&q=80",
-  lake: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80",
-  train: "https://images.unsplash.com/photo-1474487548417-7816d25c3e7b?auto=format&fit=crop&w=1600&q=80",
+  cabin: "https://images.unsplash.com/photo-1470770841072-f971736a00c3?auto=format&fit=crop&w=1600&q=80",
+  lake: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80",
+  chain: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1800&q=80",
+  dock: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
   tower: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Brainerd_Water_Tower.jpg",
-  shops: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Northern_Pacific_Railroad_Shops_Historic_District.jpg",
+  ice: "https://images.unsplash.com/photo-1483664852095-d6cc8591bf29?auto=format&fit=crop&w=1800&q=80",
+  cars: "https://images.unsplash.com/photo-1541447271487-09612b3f4d20?auto=format&fit=crop&w=1600&q=80",
 };
 
-const years = ["1805 Pike", "1870 The Crossing", "1871 First train", "1873 City", "1875 Trestle falls", "1903 Paper mill", "1921 Water tower", "1922 Strike", "1933 Baby Face", "1950 Paul Bunyan", "1968 Donnybrooke"];
+const years = ["1805 Pike", "1870 The Crossing", "1929 Madden's begins", "1940 Cragun cabins", "1968 Donnybrooke", "1982 NHRA Nationals", "1991 Ice Extravaganza", "1950 Paul Bunyan"];
 
 const people = [
-  ["Lyman P. White", "Father of Brainerd", "Civil War quartermaster and land-company agent who arrived by stage in 1870, platted lots, and later served as mayor."],
-  ["Lawrence Brainerd", "Namesake", "Vermont senator, railroad man, and anti-slavery organizer. Local research argues the town was named for him in October 1870."],
-  ["J. Gregory Smith", "Railroad president", "Northern Pacific first president chose the river crossing and rejected Smithville. Gregory Square still carries his middle name."],
-  ["C. Elmer Anderson", "Governor of Minnesota", "Born in Brainerd in 1912 to Finnish immigrant parents. Governor 1951-55, later mayor of the city that raised him."],
-  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884. 212 wins, three World Series titles, and a pioneer of the pitch that became the slider."],
-  ["Leslie Bullet Joe Bush", "World Series pitcher", "Brainerd-born right-hander on the 1923 Yankees — the first championship club of Babe Ruth's New York years."],
-  ["Zane Smith", "Bank clerk, 1933", "Nineteen-year-old messenger who walked into the First National Bank as Nelson's gang held it. Last living witness to the robbery."],
-  ["Leon E. Lum", "Philanthropist", "Attorney who gave the city wooded parkland on Rice Lake — today's Lum Park."],
-  ["George Montgomery", "Track builder", "Retired Northwest Airlines pilot who carved Donnybrooke Speedway through the woods in 1968. It became BIR in 1973."],
+  ["Jack & Jim Madden", "Gull Lake resort men", "Jack leased a failing Depression-era golf course in 1932 for $500. He wired the owner he had no money; the owner sold it anyway, nothing down. With brother Jim he built Madden's into a peninsula still run by family."],
+  ["Merrill & Louise Cragun", "Paul Bunyan Inc.", "In 1934 they registered Paul Bunyan Inc. to sell the Brainerd Lakes. With Jack Madden they staged the first Paul Bunyan event in 1936. In 1940 they bought seven acres on a swampy Gull Lake hill."],
+  ["Dutch & Irma Cragun", "A legend on the lake", "Dutch took over in 1957, added hot water, a heated pool, year-round rooms, and championship golf. In 2025 he sold to a Baxter hospitality group after 85 family years."],
+  ["George Montgomery", "Donnybrooke builder", "Retired Northwest pilot who carved a 3-mile road course south of North Long Lake in 1968."],
+  ["Jerry Hansen", "BIR's second life", "Bought the foreclosed track in 1973 and renamed it Brainerd International Raceway."],
+  ["C. Elmer Anderson", "Governor of Minnesota", "Born in Brainerd in 1912. Governor 1951-55, later mayor of the city that raised him."],
+  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884. 212 wins, three World Series titles."],
+  ["Lyman P. White", "Father of Brainerd", "Land-company agent who arrived by stage in 1870."],
+  ["Zane Smith", "Bank clerk, 1933", "Walked into First National as Baby Face Nelson's gang held it."],
 ];
 
 const events = [
-  ["1872 · Blueberry War", "Fear, a lynching, and a harvest", "After a girl disappeared near Crow Wing, two Ojibwe men were accused and killed by a mob. Their guilt was never proven. Militia arrived expecting war; Ojibwe families arrived to sell blueberries."],
-  ["July 27, 1875", "The Crossing collapses", "The wooden Mississippi trestle gave way under a freight train. The engineer, the fireman, and two Ojibwe women passengers from Sawyer were killed."],
-  ["1876–1881", "A city without a charter", "Voters chose handyman Thomas Lanihan over Judge C. B. Sleeper. The legislature revoked the city charter for six years."],
-  ["July 1, 1922", "When the shops went quiet", "A national shopmen's strike idled the Northern Pacific works. In a town whose economy was the railroad, unemployment was the whole civic story."],
-  ["October 23, 1933", "Baby Face in the lobby", "Lester Baby Face Nelson's gang waited out the time lock at First National, took about $32,000, and left firing into the lobby. Clerk Zane Smith was punched on his way in."],
-  ["1950 · and after", "From sawlogs to summers", "A talking Paul Bunyan from the Chicago Railroad Fair became the region's mascot. Donnybrooke opened in 1968 and became BIR — Can-Am, Paul Newman, NHRA nationals."],
+  ["1875", "The Crossing collapses", "The wooden Mississippi trestle gave way under a freight train. Four people died."],
+  ["1933", "Baby Face in the lobby", "Nelson's gang took about $32,000 from First National and left firing into the lobby."],
+  ["1964", "Fire at Madden's", "The clubhouse and new O'Madden Pub burned opening night. They rebuilt bigger."],
+  ["1982", "NHRA comes north", "First North Star Nationals. 50,000 fans. Shirley Muldowney won Top Fuel. Paul Newman won his first pro race here the same year."],
+  ["1991", "Ice Extravaganza", "Jaycees sketched a winter contest on a beer case. It became the world's largest charitable ice derby."],
+  ["2025", "Cragun's sale", "Dutch Cragun sold the resort after 85 years in the family."],
 ];
 
 const timeline = [
-  ["1805", "Pike on Christmas Day", "Lt. Zebulon Pike camps near the future townsite searching for the Mississippi headwaters."],
-  ["1870", "The Crossing is chosen", "J. Gregory Smith picks a crossing seven miles north of Crow Wing. Ogemaqua becomes Brainerd."],
-  ["1871", "A bridge, then a town", "The wooden trestle finishes March 8. The first passenger train follows within days."],
-  ["1873", "City status", "Brainerd is organized as a city on March 6. Gregory Square is reserved at the center of the plat."],
-  ["1875", "The trestle falls", "July 27: locomotive and 22 cars plunge into the river. Four people die."],
-  ["1876", "Charter revoked", "The legislature strips city status for six years after an unexpected mayoral election."],
-  ["1903", "Paper arrives", "Northwest Paper builds Brainerd's first pulp mill."],
-  ["1921", "The concrete tower", "The nation's first all-concrete municipal water tower becomes the city's signature landmark."],
-  ["1922", "Railroad strike", "The shopmen walk out. Most of the town's paychecks go quiet."],
-  ["1933", "Baby Face Nelson", "October 23: First National Bank robbed of about $32,000. No one is killed."],
-  ["1950", "Paul comes home", "A 26-foot talking Paul Bunyan opens Paul Bunyan Land."],
-  ["1968", "Donnybrooke", "A 3-mile road course is cut through woods south of North Long Lake."],
+  ["1805", "Pike on Christmas Day", "Lt. Zebulon Pike camps near the future townsite."],
+  ["1870", "The Crossing is chosen", "Northern Pacific picks a Mississippi crossing."],
+  ["1929", "Pine Beach Hotel", "Madden's dates its founding to the Roberts hotel and golf course."],
+  ["1932", "Jack Madden leases the course", "$500 a season, then a no-money-down purchase."],
+  ["1936", "First Paul Bunyan event", "Merrill Cragun and Jack Madden stage a parade to sell the lakes."],
+  ["1940", "Cragun cabins", "Merrill and Louise buy seven acres on Gull Lake."],
+  ["1957", "Dutch takes the keys", "Merrill Cragun Jr. becomes manager."],
+  ["1968", "Donnybrooke", "George Montgomery cuts a 3-mile course."],
+  ["1973", "BIR is born", "Jerry Hansen buys and renames the track."],
+  ["1982", "NHRA Nationals", "First national drag event at BIR."],
+  ["1991", "Ice Extravaganza", "Jaycees put 10,000 anglers on Hole-in-the-Day Bay."],
+  ["2025", "Cragun's changes hands", "Sold to Leisure Hotels and Resorts of Baxter."],
 ];
 ---
 
 <Base>
   <section class="hero" id="top">
-    <img class="hero-media" src={img.river} alt="River and forest at dusk" />
+    <img class="hero-media" src={img.chain} alt="Northern lake country at dusk" />
     <div class="hero-copy wrap">
       <p class="eyebrow reveal">A history of the crossing</p>
-      <h1 class="reveal delay-1">Where the railroad met the river.</h1>
-      <p class="lede reveal delay-2">Before the lakes were a weekend, before Paul Bunyan learned children's names, this was Ojibwe ground and then a Northern Pacific machine shop in the pines.</p>
+      <h1 class="reveal delay-1">Railroad town. Lake town. Race town.</h1>
+      <p class="lede reveal delay-2">Brainerd started where steel met the Mississippi. It stayed because Gull Lake turned a weekend into a century of family resorts, ice holes, and a racetrack in the pines.</p>
       <p class="scroll-cue">Scroll the century</p>
     </div>
   </section>
 
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      {[...years, ...years].map((y) => <span>{y} *</span>)}
-    </div>
+    <div class="marquee-track">{[...years, ...years].map((y) => <span>{y} *</span>)}</div>
   </div>
 
   <section class="chapter paper" id="origins">
@@ -75,8 +74,7 @@ const timeline = [
         <p class="kicker">Chapter I</p>
         <h2>A river already named</h2>
         <div class="prose">
-          <p>The land that became Brainerd was Ojibwe territory — hunting ground, blueberry field, and a working stretch of the Mississippi long before surveyors arrived. Crow Wing Village, a few miles downstream near Fort Ripley, was the earlier meeting place.</p>
-          <p>European-American explorers wrote the site down on Christmas Day, 1805, when Zebulon Pike paused here hunting the river's headwaters. The town waited sixty-five years. What changed everything was a railroad that needed to get across the Mississippi on its way to the Pacific.</p>
+          <p>The land that became Brainerd was Ojibwe territory. Crow Wing Village near Fort Ripley was the earlier meeting place. Zebulon Pike camped here on Christmas Day, 1805. What changed everything was a railroad that needed to cross the Mississippi.</p>
         </div>
       </div>
       <figure class="photo">
@@ -91,89 +89,137 @@ const timeline = [
     <div class="wrap split">
       <figure class="photo">
         <img src={img.steam} alt="Steam locomotive at a historic station" />
-        <figcaption class="caption">A town built so locomotives could cross — and be repaired.</figcaption>
+        <figcaption class="caption">A town built so locomotives could cross and be repaired.</figcaption>
       </figure>
       <div>
         <p class="kicker">Chapter II · 1870</p>
         <h2>Named in a boardroom</h2>
         <div class="prose">
-          <p>Northern Pacific president John Gregory Smith chose a crossing seven miles north of Crow Wing. For a few weeks the camp was called Ogemaqua, then The Crossing.</p>
-          <p>On October 1, 1870, directors renamed it Brainerd. Popular memory says Smith honored his wife, Ann Eliza Brainerd Smith. A later Tribune interview quoted him honoring her father, Vermont senator Lawrence Brainerd. Both names stuck: the town for the family, Gregory Square for Smith.</p>
-          <p>The wooden trestle opened March 8, 1871. Engineer Adam Brown brought the first passenger train across. Crow Wing emptied. Brainerd became a city on March 6, 1873.</p>
+          <p>Northern Pacific president John Gregory Smith chose a crossing seven miles north of Crow Wing. On October 1, 1870, directors named it Brainerd. The wooden trestle opened March 8, 1871. By the 1920s nine in ten households lived off the railroad shops. When the shops shrank, the lakes had to become the payroll.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="film" aria-label="Historic photographs">
-    <figure>
-      <img src={img.shops} alt="Northern Pacific shops historic district" />
-      <figcaption class="caption">NP shops district · McGhiever / Wikimedia</figcaption>
-    </figure>
+  <section class="film" aria-label="Photographs of the lakes and town">
     <figure>
       <img src={img.tower} alt="Brainerd concrete water tower" />
-      <figcaption class="caption">Water tower, 1918-21 · Paul Bunyan's flashlight</figcaption>
+      <figcaption class="caption">The 1918-21 water tower — Paul Bunyan's flashlight</figcaption>
     </figure>
     <figure>
-      <img src={img.train} alt="Passenger train" />
-      <figcaption class="caption">By the 1920s, nine in ten households lived off the railroad.</figcaption>
+      <img src={img.lake} alt="Gull Lake chain shoreline and pines" />
+      <figcaption class="caption">Gull Lake country — the chain that kept the town after the trains</figcaption>
     </figure>
     <figure>
-      <img src={img.lake} alt="Northern lake" />
-      <figcaption class="caption">More than 460 lakes within 25 miles.</figcaption>
+      <img src={img.dock} alt="Lake at dusk" />
+      <figcaption class="caption">Resort light on a north-country shore</figcaption>
+    </figure>
+    <figure>
+      <img src={img.ice} alt="Frozen northern lake in winter" />
+      <figcaption class="caption">The same water in January — Ice Extravaganza weather</figcaption>
     </figure>
   </section>
 
-  <section class="chapter paper" id="events">
+  <section class="chapter paper" id="lakes">
     <span class="chapter-num">03</span>
+    <div class="wrap split">
+      <div>
+        <p class="kicker">The chain</p>
+        <h2>Gull Lake is why people stay</h2>
+        <div class="prose">
+          <p>More than 460 lakes sit within 25 miles of Brainerd. The one that made the letterhead is Gull — a many-armed lake north of town, chained to Round, Love, and the bays cabin families memorize like streets.</p>
+          <p>Hole-in-the-Day Bay is named for the Ojibwe leader Bagone-giizhig. In summer it is docks and golf. In January it becomes a temporary city of 10,000 anglers.</p>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src={img.chain} alt="Lake chain among forested hills" />
+        <figcaption class="caption">Water and pine — the Gull Lake look.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter" id="resorts">
+    <span class="chapter-num">04</span>
     <div class="wrap">
-      <p class="kicker">Chapter III</p>
-      <h2>Years the town still tells</h2>
+      <p class="kicker">Neighbors on the peninsula</p>
+      <h2>The Maddens and the Craguns</h2>
+      <div class="prose" style="max-width:46rem">
+        <p>Two University of Minnesota ad-desk friends — Jack Madden and Merrill Cragun Sr. — helped invent Brainerd as a vacation. In 1936 they put on the town's first Paul Bunyan parade. Then they built resorts within waving distance on Gull Lake.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <p class="meta">Madden's on Gull Lake · since 1929</p>
+          <h3>Nothing down, ten years to pay</h3>
+          <p>Jack Madden summered at the Roberts Pine Beach Hotel in 1931. He leased the failing golf course for $500, then bought it with no money down. With brother Jim he built Mission Point, the Madden Inn, Voyageur rooms, and The Classic. Deb (Madden) Thuringer passed it to Ben Thuringer and Abbey Pieper. Fourth generation on the same peninsula.</p>
+        </article>
+        <article class="card">
+          <p class="meta">Cragun's Resort · 1940-2025 in the family</p>
+          <h3>A swamp, a gamble</h3>
+          <p>Merrill and Louise bought seven acres in 1940. Dutch called it a hill that sloped down to a marsh. By 1947 they had a lodge and twelve cabins. Dutch took over in 1957, married Irma, and built 54 holes of golf. In 2025, at 93, he sold to Leisure Hotels and Resorts in Baxter. The name on the lake stayed.</p>
+        </article>
+      </div>
+      <figure class="photo" style="margin-top:1.8rem;min-height:320px">
+        <img src={img.cabin} alt="Lakeside pines and still water" style="min-height:320px" />
+        <figcaption class="caption">The product they sold in 1936 is still the product: water, pine, and a week that feels longer than it is.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter paper" id="bir">
+    <span class="chapter-num">05</span>
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Donnybrooke · 1968</p>
+        <h2>A racetrack in the jack pine</h2>
+        <div class="prose">
+          <p>George Montgomery wanted somewhere to race his Shelby 427 Cobra. He cut a 3.1-mile course through woods on North Long Lake and named it Donnybrooke for two Minnesota road racers killed at Road America.</p>
+          <p>The first event in July 1968 was an NHRA drag race won by Doc Halladay. Can-Am followed. Foreclosure hit in 1973. Jerry Hansen bought it and renamed it Brainerd International Raceway. Paul Newman set a lap record in 1977 and won his first pro race here in 1982 — the year 50,000 fans came for the first NHRA nationals. The Copham family bought the track in 2006 to keep it from becoming lots.</p>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src={img.cars} alt="Race cars on a starting grid" />
+        <figcaption class="caption">BIR still runs road course and drag strip on the same property.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter" id="ice">
+    <span class="chapter-num">06</span>
+    <div class="wrap split">
+      <figure class="photo">
+        <img src={img.ice} alt="Wide frozen lake under winter sky" />
+        <figcaption class="caption">Hole-in-the-Day Bay in January — a city that lasts three hours.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Gull Lake · every January</p>
+        <h2>The Ice Fishing Extravaganza</h2>
+        <div class="prose">
+          <p>In 1990 Brainerd Jaycees sketched a winter event on a beer case. The first contest ran in 1991. It is billed as the world's largest charitable ice-fishing tournament.</p>
+          <p>Volunteers drill thousands of holes on Hole-in-the-Day Bay. More than 10,000 anglers walk out. For three hours the county's largest city is on the ice. Most of the money goes to Confidence Learning Center — more than $3 million since the start. Thin ice has moved it to Round Lake more than once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter paper" id="events">
+    <div class="wrap">
+      <p class="kicker">The years people retell</p>
+      <h2>From trestle to Zoo camp</h2>
       <div class="grid-2">
         {events.map(([meta, title, text]) => (
-          <article class="card">
-            <p class="meta">{meta}</p>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
+          <article class="card"><p class="meta">{meta}</p><h3>{title}</h3><p>{text}</p></article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="chapter moss">
-    <div class="wrap split">
-      <div>
-        <p class="kicker">Folklore</p>
-        <h2>The giant who advertised the woods</h2>
-        <div class="prose">
-          <p>Paul Bunyan was not born in Brainerd. The camp tales grew up in Great Lakes logging country and were popularized by Minnesota ad man William Laughead. What Brainerd did was give the giant a job.</p>
-          <p>In 1949 a 26-foot mechanized Paul came home from the Chicago Railroad Fair. Paul Bunyan Land opened in 1950. The historic water tower picked up a second name: Paul Bunyan's flashlight — or his golf tee.</p>
-          <p>The legend is affectionate and incomplete. It celebrates the lumberjack and says little about the Ojibwe homelands the mills overran. Both stories belong on the same map.</p>
-        </div>
-      </div>
-      <div>
-        <p class="quote">The Big Fellow has settled down at last. Paul Bunyan has chosen Brainerd for his home.</p>
-        <p class="caption">Brainerd Dispatch, October 12, 1949</p>
-        <figure class="photo" style="min-height:240px;margin-top:1.4rem">
-          <img src={img.cabin} alt="Northwoods cabin country" style="min-height:240px" />
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <section class="chapter" id="people">
-    <span class="chapter-num">04</span>
     <div class="wrap">
       <p class="kicker">Faces of the crossing</p>
       <h2>People the town remembers</h2>
       <div class="grid-3">
         {people.map(([name, role, text]) => (
-          <article class="card">
-            <p class="meta">{role}</p>
-            <h3>{name}</h3>
-            <p>{text}</p>
-          </article>
+          <article class="card"><p class="meta">{role}</p><h3>{name}</h3><p>{text}</p></article>
         ))}
       </div>
     </div>
@@ -181,17 +227,11 @@ const timeline = [
 
   <section class="chapter paper" id="timeline">
     <div class="wrap">
-      <p class="kicker">A condensed century</p>
+      <p class="kicker">A longer century</p>
       <h2>Timeline</h2>
       <div class="timeline">
         {timeline.map(([year, title, text]) => (
-          <div class="t-item">
-            <div class="year">{year}</div>
-            <div>
-              <h3>{title}</h3>
-              <p class="prose">{text}</p>
-            </div>
-          </div>
+          <div class="t-item"><div class="year">{year}</div><div><h3>{title}</h3><p class="prose">{text}</p></div></div>
         ))}
       </div>
     </div>
@@ -202,22 +242,21 @@ const timeline = [
       <p class="kicker">Still here</p>
       <h2>What remains</h2>
       <div class="prose">
-        <p>The Northern Pacific is gone as a name. BNSF still works a smaller shop. The brick shops district is on the National Register. The Carnegie library and courthouse still hold their corners. Gregory Square is still a square. The Mississippi is still the reason anyone stopped.</p>
-        <p>About 14,400 people live in the city. The rest of the story happens on weekends, on docks, and on the Paul Bunyan State Trail.</p>
+        <p>Madden's is still a family peninsula. Cragun's still says Gull Lake on the sign. BIR still shakes the pines in August. Every winter the Jaycees still ask the ice if it will hold.</p>
       </div>
       <div class="stat-row">
         <div class="stat"><b>1870</b><span>Railroad town founded</span></div>
-        <div class="stat"><b>14,395</b><span>Residents in 2020</span></div>
-        <div class="stat"><b>460+</b><span>Lakes within 25 miles</span></div>
-        <div class="stat"><b>26 ft</b><span>Talking Paul at the park</span></div>
+        <div class="stat"><b>10k+</b><span>Anglers on Gull in January</span></div>
+        <div class="stat"><b>85 yrs</b><span>Craguns on the lake</span></div>
+        <div class="stat"><b>4 gen</b><span>Maddens still on the peninsula</span></div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      <p>Built with Astro. Source: <a href="https://github.com/KristineMK72/brainerd-history">github.com/KristineMK72/brainerd-history</a>.</p>
-      <p style="margin-top:0.8rem">Sources include the Crow Wing County Historical Society, City of Brainerd History Notes, Brainerd Dispatch sesquicentennial reporting, National Register listings, the Baseball Hall of Fame, and BIR official history.</p>
+      <p>Built with Astro. <a href="https://github.com/KristineMK72/brainerd-history">GitHub</a> · <a href="https://brainerd-history.vercel.app">Live site</a></p>
+      <p style="margin-top:0.8rem">Sources: Crow Wing County Historical Society; Madden's and Cragun's official histories; BIR; Jaycees Ice Extravaganza reporting; Brainerd Dispatch. Landscape photos are Unsplash stand-ins; the water tower is Wikimedia.</p>
     </div>
   </footer>
 </Base>
