@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Brainerd — A Crossing on the Mississippi",
+  description = "A visual history of Brainerd, Minnesota: Ojibwe homeland, Northern Pacific railroad town, lumber mills, lakes country, and the people who shaped it.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="nav">
+      <a class="brand" href="#top">Brainerd · 1870</a>
+      <ul class="nav-links">
+        <li><a href="#origins">Origins</a></li>
+        <li><a href="#rails">Rails</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+      </ul>
+    </header>
+    <slot />
+  </body>
+</html>
