@@ -26,6 +26,7 @@ const years = [
   "1940 Cragun cabins",
   "1968 Donnybrooke",
   "1982 NHRA Nationals",
+  "1986 Guy Doud",
   "1991 Ice Extravaganza",
   "2025 Cragun's sale",
 ];
@@ -33,6 +34,7 @@ const years = [
 const people = [
   ["Bagone-giizhig the Elder", "Mississippi Ojibwe", "Born about 1800 on Madeline Island. In 1836 he moved his band to Gull Lake and built a regional leadership the Americans treated as head chief. He died in 1847 when a wagon wheel crushed him at the Mississippi crossing at Little Falls."],
   ["Bagone-giizhig the Younger", "Hole-in-the-Day", "Born Gwiiwizens — Boy — about 1825. Took his father's name at twenty. Negotiated treaties, kept a house on Gull, and was shot on the road toward Crow Wing on June 27, 1868. The bay still carries the English name."],
+  ["Guy Doud", "1986 National Teacher of the Year", "Wadena-born, Brainerd-raised. English at Brainerd High from 1975. On April 14, 1986, Reagan handed him the crystal apple at the White House. He said he taught because teachers had loved a kid the rest of the room had given up on. Later a speaker, pastor, and author of Molder of Dreams."],
   ["Jack & Jim Madden", "Gull Lake resort men", "Jack summered at Pine Beach in 1931, then leased a failing Depression golf course with uncle Tom for $500. The brothers bought it with nothing down and spent the next forty years turning a peninsula into Madden's."],
   ["Deb Thuringer, Ben & Abbey", "Fourth generation", "Jim Madden's daughter Deb and husband Brian ran the 1,000-acre resort for decades. Their children Ben Thuringer and Abbey Pieper grew up on the golf course and in the lodge — the same peninsula their great-uncle first leased."],
   ["Merrill & Louise Cragun", "Paul Bunyan Inc.", "In 1934 they registered Paul Bunyan Inc. to sell the lakes. With Jack Madden they staged the first Paul Bunyan parade in 1936. In 1940 they bought a swampy seven-acre hill on Steamboat Bay."],
@@ -51,6 +53,7 @@ const events = [
   ["1936", "Paul Bunyan sells the lakes", "Merrill Cragun and Jack Madden put a giant in a parade so city people would book a cabin. The advertising outlived the railroad shops."],
   ["1964", "Fire at Madden's", "The clubhouse and new O'Madden Pub burned on opening night. They rebuilt bigger and kept the season."],
   ["1982", "NHRA comes north", "First Quaker State NorthStar Nationals. 50,000 fans. Shirley Muldowney won Top Fuel. Paul Newman won his first professional race on the road course the same year."],
+  ["1986", "A crystal apple", "Guy Doud, eleven years into teaching English at Brainerd High, is named National Teacher of the Year. Reagan receives him at the White House."],
   ["1991", "Ice Extravaganza", "Jaycees sketched a winter contest on a beer case. It became the world's largest charitable ice derby, still drilled on Hole-in-the-Day Bay when the ice will hold."],
   ["2006", "The Cophams buy BIR", "The track that almost became lakeshore lots stayed a racetrack in the jack pine."],
   ["2025", "Cragun's sale", "Dutch Cragun sold to Leisure Hotels and Resorts of Baxter after 85 years in the family. The name on the lake stayed."],
@@ -73,10 +76,13 @@ const timeline = [
   ["1936", "First Paul Bunyan event", "Cragun and Madden stage a parade. The giant becomes the lakes' letterhead."],
   ["1940", "Cragun cabins", "Merrill and Louise buy seven acres on a hill above a Steamboat Bay marsh."],
   ["1947", "Lodge and twelve cabins", "Louise runs the season Memorial Day to Labor Day. Dutch, age nine, is in charge of bait."],
+  ["1953", "Guy Doud is born", "Wadena, October 28. He grows up to teach English in the Brainerd rooms that once held him."],
   ["1957", "Dutch takes the keys", "Merrill Cragun Jr. becomes manager and starts the long expansion."],
   ["1968", "Donnybrooke", "George Montgomery cuts a 3.1-mile course named for two Minnesota road racers killed at Road America."],
   ["1973", "BIR is born", "Jerry Hansen buys the foreclosed track and renames it."],
+  ["1975", "Doud in the classroom", "After Brainerd Community College and Concordia, he starts teaching language arts at Brainerd Senior High."],
   ["1982", "NHRA Nationals", "Met Stadium bleachers. 50,000 people. The Zoo campground becomes folklore."],
+  ["1986", "National Teacher of the Year", "April 14. Crystal apple at the White House. He tells the country he is a teacher because teachers first loved him."],
   ["1991", "Ice Extravaganza", "Jaycees put thousands of anglers on Hole-in-the-Day Bay. Confidence Learning Center becomes the main beneficiary."],
   ["2006", "Copham family", "BIR is bought to keep it a racetrack."],
   ["2025", "Cragun's changes hands", "Sold to Leisure Hotels and Resorts of Baxter."],
@@ -352,7 +358,7 @@ const timeline = [
       <div class="stat-row">
         <div class="stat"><b>1836</b><span>Gull Lake village founded</span></div>
         <div class="stat"><b>1868</b><span>Hole-in-the-Day killed</span></div>
-        <div class="stat"><b>9,947</b><span>Acres of Gull itself</span></div>
+        <div class="stat"><b>1986</b><span>Doud, Teacher of the Year</span></div>
         <div class="stat"><b>10k+</b><span>Anglers on the bay in January</span></div>
       </div>
     </div>
@@ -361,7 +367,7 @@ const timeline = [
   <footer>
     <div class="wrap">
       <p>Built with Astro. <a href="https://github.com/KristineMK72/brainerd-history">GitHub</a> · <a href="https://brainerd-history.vercel.app">Live site</a></p>
-      <p style="margin-top:0.8rem">Sources: MNopedia on Bagone-giizhig; Anton Treuer, <em>The Assassination of Hole in the Day</em>; Brainerd Dispatch; Crow Wing County Historical Society; Madden's and Cragun's official histories; BIR; NHRA; Jaycees Ice Extravaganza; Minnesota DNR / Gull Chain figures. Landscape photos are Unsplash stand-ins; the water tower is Wikimedia Commons (Todd Murray).</p>
+      <p style="margin-top:0.8rem">Sources: MNopedia on Bagone-giizhig; Anton Treuer, <em>The Assassination of Hole in the Day</em>; Brainerd Dispatch; Crow Wing County Historical Society; Madden's and Cragun's official histories; BIR; NHRA; Jaycees Ice Extravaganza; Minnesota DNR / Gull Chain figures; Reagan Library and 1986 reporting on Guy Doud. Landscape photos are Unsplash stand-ins; the water tower is Wikimedia Commons (Todd Murray).</p>
     </div>
   </footer>
 </Base>
