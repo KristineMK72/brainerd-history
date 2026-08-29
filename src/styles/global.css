@@ -56,6 +56,8 @@ h2 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); margin-bottom: 1.3rem; }
 .card:hover { transform: translateY(-4px); background: rgba(255,255,255,.55); }
 .chapter:not(.paper) .card { background: rgba(255,255,255,.04); border-color: var(--line); }
 .card h3 { font-size: 1.4rem; margin: .35rem 0 .45rem; line-height: 1.15; }
+.card p + p { margin-top: .75rem; }
+.card-photo { width: 100%; height: 190px; object-fit: cover; border-radius: 4px; margin: 0 0 1rem; }
 .meta { font-family: Outfit, sans-serif; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--rust); }
 .chapter:not(.paper) .meta { color: var(--gold); }
 .film { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 34vw); gap: .75rem; overflow-x: auto; padding: 0 1.2rem 1rem; scroll-snap-type: x mandatory; }
@@ -64,8 +66,10 @@ h2 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); margin-bottom: 1.3rem; }
 .quote { font-family: Fraunces, serif; font-size: clamp(1.7rem, 3.6vw, 2.7rem); line-height: 1.18; max-width: 16ch; }
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
 .stat { border-top: 1px solid var(--gold); padding-top: .9rem; }
+.chapter.paper .stat { border-top-color: rgba(22,18,12,.2); }
 .stat b { display: block; font-family: Fraunces, serif; font-size: 2.1rem; font-weight: 400; }
 .stat span { font-family: Outfit, sans-serif; font-size: .74rem; letter-spacing: .05em; color: rgba(244,234,211,.65); }
+.chapter.paper .stat span { color: var(--muted); }
 .timeline { margin-top: 2.4rem; }
 .t-item { display: grid; grid-template-columns: 7rem 1fr; gap: 1.6rem; padding: 1.15rem 0; border-top: 1px solid rgba(22,18,12,.1); }
 .year { font-family: Fraunces, serif; font-size: 1.45rem; color: #8a6528; }
