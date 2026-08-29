@@ -8,10 +8,16 @@ interface Props {
 
 const site = "https://brainerd-history.vercel.app";
 const {
-  title = "Brainerd — A Crossing on the Mississippi",
+  title = "Brainerd \u2014 A Crossing on the Mississippi",
   description = "A visual history of Brainerd, Minnesota: Ojibwe homelands, railroad town, Gull Lake resorts, Paul Bunyan Land, BIR, and the ice.",
 } = Astro.props;
+
+// Absolute JPEG. Messaging apps (iMessage, WhatsApp, Facebook, X) refuse relative
+// paths and blank-preview if the image 404s. Hosted card at /og.jpg plus a public
+// Library of Congress Paul Bunyan photo as a guaranteed fallback.
 const image = `${site}/og.jpg`;
+const imageFallback =
+  "https://tile.loc.gov/storage-services/service/pnp/mrg/03700/03754v.jpg";
 const imageSquare = `${site}/og-square.jpg`;
 ---
 
@@ -26,25 +32,24 @@ const imageSquare = `${site}/og-square.jpg`;
     <link rel="canonical" href={site} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Brainerd — A Crossing on the Mississippi" />
+    <meta property="og:site_name" content="Brainerd \u2014 A Crossing on the Mississippi" />
     <meta property="og:url" content={site} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <meta property="og:image" content={imageFallback} />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Brainerd, 1870 — A Crossing on the Mississippi, with the talking Paul Bunyan statue" />
+    <meta property="og:image:alt" content="The talking Paul Bunyan statue at Paul Bunyan Land, Brainerd" />
     <meta property="og:image" content={imageSquare} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
-    <link rel="image_src" href={image} />
+    <link rel="image_src" href={imageFallback} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:image:alt" content="Brainerd — A Crossing on the Mississippi" />
+    <meta name="twitter:image" content={imageFallback} />
+    <meta name="twitter:image:alt" content="Paul Bunyan statue, Brainerd" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -60,7 +65,7 @@ const imageSquare = `${site}/og-square.jpg`;
   <body>
     <div class="grain"></div>
     <header class="nav">
-      <a class="brand" href="#top">Brainerd · 1870</a>
+      <a class="brand" href="#top">Brainerd \u00b7 1870</a>
       <ul class="nav-links">
         <li><a href="#origins">Origins</a></li>
         <li><a href="#hole">Hole-in-the-Day</a></li>
