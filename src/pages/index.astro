@@ -17,7 +17,8 @@ const img = {
 };
 
 const years = [
-  "1805 Pike",
+  "1836 Gull Lake village",
+  "1868 Hole-in-the-Day",
   "1870 The Crossing",
   "1913 Gull Dam",
   "1929 Madden's begins",
@@ -26,11 +27,12 @@ const years = [
   "1968 Donnybrooke",
   "1982 NHRA Nationals",
   "1991 Ice Extravaganza",
-  "2006 Cophams save BIR",
   "2025 Cragun's sale",
 ];
 
 const people = [
+  ["Bagone-giizhig the Elder", "Mississippi Ojibwe", "Born about 1800 on Madeline Island. In 1836 he moved his band to Gull Lake and built a regional leadership the Americans treated as head chief. He died in 1847 when a wagon wheel crushed him at the Mississippi crossing at Little Falls."],
+  ["Bagone-giizhig the Younger", "Hole-in-the-Day", "Born Gwiiwizens — Boy — about 1825. Took his father's name at twenty. Negotiated treaties, kept a house on Gull, and was shot on the road toward Crow Wing on June 27, 1868. The bay still carries the English name."],
   ["Jack & Jim Madden", "Gull Lake resort men", "Jack summered at Pine Beach in 1931, then leased a failing Depression golf course with uncle Tom for $500. The brothers bought it with nothing down and spent the next forty years turning a peninsula into Madden's."],
   ["Deb Thuringer, Ben & Abbey", "Fourth generation", "Jim Madden's daughter Deb and husband Brian ran the 1,000-acre resort for decades. Their children Ben Thuringer and Abbey Pieper grew up on the golf course and in the lodge — the same peninsula their great-uncle first leased."],
   ["Merrill & Louise Cragun", "Paul Bunyan Inc.", "In 1934 they registered Paul Bunyan Inc. to sell the lakes. With Jack Madden they staged the first Paul Bunyan parade in 1936. In 1940 they bought a swampy seven-acre hill on Steamboat Bay."],
@@ -39,10 +41,11 @@ const people = [
   ["Jerry Hansen", "BIR's second life", "Winningest amateur in SCCA history. Bought the foreclosed track in 1973, renamed it Brainerd International Raceway, and put Mario Andretti on the board."],
   ["Jed & Kristi Copham", "Kept the pines from becoming lots", "Bought BIR in 2006 when the land was a developer's dream. The NHRA Nationals and the Zoo campground stayed."],
   ["C. Elmer Anderson", "Governor of Minnesota", "Born in Brainerd in 1912. Governor 1951–55, later mayor of the city that raised him."],
-  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884. 212 wins, three World Series titles."],
+  ["Charles Albert Bender", "Hall of Fame pitcher", "Born in Crow Wing County in 1884 to an Ojibwe mother. 212 wins, three World Series titles."],
 ];
 
 const events = [
+  ["1868", "The road to Crow Wing", "Bagone-giizhig the Younger was shot near the Gull River outlet on June 27, on his way to fight removal to White Earth. The bay on Gull still carries his English name."],
   ["1875", "The Crossing collapses", "The wooden Mississippi trestle gave way under a freight train. Four people died. The railroad rebuilt in iron and the shops became the town's paycheck."],
   ["1933", "Baby Face in the lobby", "On October 23, Nelson's gang took about $32,000 from First National and left firing into the lobby. Clerk Zane Smith lived to tell it."],
   ["1936", "Paul Bunyan sells the lakes", "Merrill Cragun and Jack Madden put a giant in a parade so city people would book a cabin. The advertising outlived the railroad shops."],
@@ -54,7 +57,14 @@ const events = [
 ];
 
 const timeline = [
+  ["c. 800 BCE", "Woodland mounds", "Burial mounds later found at the Gull Lake Dam site mark much older homelands than the railroad town."],
   ["1805", "Pike on Christmas Day", "Lt. Zebulon Pike camps near the future townsite."],
+  ["1836", "Gull Lake village", "Bagone-giizhig the Elder moves his band to Gull Lake and founds the Mississippi Ojibwe community the treaties later treat as central."],
+  ["1847", "The name passes", "The Elder dies at Little Falls. His son Gwiiwizens takes the name Bagone-giizhig and claims a wider chieftainship."],
+  ["1855", "Treaty and reservation", "A Gull Lake reservation is reserved in the 1855 treaty, then steadily undone."],
+  ["1862", "Crow Wing councils", "During the U.S.–Dakota War the Younger threatens the agency, then councils at Crow Wing. A wider Ojibwe war does not follow."],
+  ["1867", "White Earth treaty", "Bagone-giizhig helps negotiate the reservation and tells people not to move until the promises are built."],
+  ["1868", "June 27 on the road", "He is assassinated near Crow Wing on the way to Washington. Crow Wing Village withers; Brainerd is platted two years later."],
   ["1870", "The Crossing is chosen", "Northern Pacific picks a Mississippi crossing. Directors name it Brainerd on October 1."],
   ["1913", "Gull Lake Dam", "The Corps raises the chain. Gull becomes the big water north of town."],
   ["1929", "Pine Beach Hotel", "Madden's dates its founding to the Roberts hotel and golf course on the peninsula."],
@@ -79,7 +89,7 @@ const timeline = [
     <div class="hero-copy wrap">
       <p class="eyebrow reveal">A history of the crossing</p>
       <h1 class="reveal delay-1">Railroad town. Lake town. Race town.</h1>
-      <p class="lede reveal delay-2">Brainerd started where steel met the Mississippi. It stayed because the Gull Lake chain turned a weekend into a century of family resorts, a racetrack in the pines, and a city that appears on the ice every January.</p>
+      <p class="lede reveal delay-2">Before the shops and the resorts there was a Gull Lake village and a name the maps still carry: Bagone-giizhig — Hole-in-the-Day. Brainerd stayed because the chain turned a weekend into a century of family cabins, a racetrack in the pines, and a city that appears on the ice every January.</p>
       <p class="scroll-cue">Scroll the century</p>
     </div>
   </section>
@@ -95,25 +105,71 @@ const timeline = [
         <p class="kicker">Chapter I</p>
         <h2>A river already named</h2>
         <div class="prose">
-          <p>The land that became Brainerd was Ojibwe territory. Crow Wing Village near Fort Ripley was the earlier meeting place. Zebulon Pike camped here on Christmas Day, 1805. What changed everything was a railroad that needed to cross the Mississippi.</p>
+          <p>The land that became Brainerd was Anishinaabe — Ojibwe — territory long before a railroad needed a crossing. Woodland peoples left burial mounds at what is now the Gull Lake Dam. Ojibwe families took wild rice, maple sugar, and fish from the chain the maps would later sell as vacation country.</p>
+          <p>The Ojibwe name for Gull is remembered as <em>Ga-gaiashkonzikag sagaiigun</em> — the lake of the young gulls. Crow Wing Village, about ten miles south at the meeting of the Crow Wing and the Mississippi, was the earlier town: traders, mixed-blood families, a Catholic mission, and the agency that treated with the Mississippi band.</p>
+          <p>Zebulon Pike camped near the future townsite on Christmas Day, 1805. What changed the map was not discovery. It was a railroad that needed to cross the river north of Crow Wing.</p>
         </div>
       </div>
       <figure class="photo">
         <img src={img.pines} alt="Pine forest in northern light" />
-        <figcaption class="caption">The city-of-pines before the shops.</figcaption>
+        <figcaption class="caption">The city-of-pines before the shops — and before the shops, a village on Gull.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="chapter" id="rails">
+  <section class="chapter" id="hole">
     <span class="chapter-num">02</span>
+    <div class="wrap">
+      <p class="kicker">Bagone-giizhig · Gull Lake</p>
+      <h2>Hole-in-the-Day</h2>
+      <div class="prose" style="max-width:46rem">
+        <p>The English name on the bay is a rough translation of Bagone-giizhig — also rendered Hole-in-the-Sky, a hole made in the day or the heavens. There were two chiefs of that name, father and son. The bay, a small nearby lake, and a road by Nisswa remember them. Most people meet the name now as a place to drill ice in January.</p>
+      </div>
+
+      <div class="grid-2" style="margin-top:2.2rem">
+        <article class="card">
+          <p class="meta">The Elder · c. 1800–1847</p>
+          <h3>A village on Gull</h3>
+          <p>Bagone-giizhig the Elder was born on Madeline Island in Lake Superior. He was Bear clan, not a hereditary civil chief in the old pattern, and he made a different kind of power: war reputation, Midewiwin standing, and a talent for talking to Americans as if he spoke for a region, not a single village.</p>
+          <p>Around 1836 he moved his band from Sandy Lake to the Gull Lake country and founded the Mississippi Ojibwe community that treaty-makers would treat as central. Families kept a sugar bush between Gull and Round and North Long. Crow Wing, downriver, became the mixed town where that power met the fur trade.</p>
+          <p>In May 1847, coming home from a council at Prairie du Chien, he fell from a wagon at the Mississippi crossing at Little Falls. The wheel crushed his chest. The name, and the claim that went with it, passed to his son.</p>
+        </article>
+        <article class="card">
+          <p class="meta">The Younger · c. 1825–1868</p>
+          <h3>Gwiiwizens, then the name</h3>
+          <p>The son was born Gwiiwizens — Boy. He was about twenty when the Elder died. At Fond du Lac that same year he stood up in a treaty council and told the room he was first chief of all Minnesota Ojibwe. Many leaders never forgave the claim. The United States often preferred to have one man to sign for.</p>
+          <p>He kept a farm and a two-story house near Gull and Crow Wing. He sat in the treaties that carved the country into lumber and reservation lines, including the 1855 agreement that reserved a Gull Lake homeland and the 1867 treaty that created White Earth. He told people not to move until the government built what it had promised.</p>
+          <p>In 1862, while the U.S.–Dakota War burned the Minnesota River valley, he threatened the Crow Wing agency and Fort Ripley. The Gull Lake mission burned. Captives were taken and released. Pillager leaders from Leech Lake refused to follow him into a general war. Councils at Crow Wing pulled the crisis back from the edge. The suspicion never left.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="wrap split" style="margin-top:3rem">
+      <div>
+        <p class="kicker">June 27, 1868</p>
+        <h2>The road between Gull and Crow Wing</h2>
+        <div class="prose">
+          <p>That morning he left for Washington to fight the removal written into the White Earth treaty. His cousin and bodyguard, a man named Ojibwe, drove. Near the Gull River outlet above Crow Wing — local memory puts it by today’s Fisherman’s Bridge — Leech Lake Pillager men stopped the buggy.</p>
+          <p>He stood and called that they had caught him unarmed. He was shot, then killed on the road. The party looted the Gull River farm. He was buried at the Catholic ground at Crow Wing. Descendants later said the body was moved in secret so the grave would not be robbed. No one was prosecuted.</p>
+          <p>For decades the story was jealousy, or payback for 1862, or anger that he tried to keep mixed-blood traders off White Earth. Anton Treuer’s later work, and testimony the killers themselves gave years after, points to a hired killing arranged by Crow Wing traders who feared losing their place in the new reservation economy. Crow Wing Village faded. Two years later the railroad crossed the Mississippi a few miles north and named a different town.</p>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src={img.lake} alt="Northern lake shore lined with pines" />
+        <figcaption class="caption">Gull Lake country — village, sugar bush, and later the bay that keeps the English name.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="chapter paper" id="rails">
+    <span class="chapter-num">03</span>
     <div class="wrap split">
       <figure class="photo">
         <img src={img.steam} alt="Steam locomotive at a historic station" />
         <figcaption class="caption">A town built so locomotives could cross and be repaired.</figcaption>
       </figure>
       <div>
-        <p class="kicker">Chapter II · 1870</p>
+        <p class="kicker">Chapter III · 1870</p>
         <h2>Named in a boardroom</h2>
         <div class="prose">
           <p>Northern Pacific president John Gregory Smith chose a crossing seven miles north of Crow Wing. On October 1, 1870, directors named it Brainerd. The wooden trestle opened March 8, 1871. By the 1920s nine in ten households lived off the railroad shops. When the shops shrank, the lakes had to become the payroll.</p>
@@ -141,8 +197,8 @@ const timeline = [
     </figure>
   </section>
 
-  <section class="chapter paper" id="lakes">
-    <span class="chapter-num">03</span>
+  <section class="chapter" id="lakes">
+    <span class="chapter-num">04</span>
     <div class="wrap split">
       <div>
         <p class="kicker">The chain</p>
@@ -150,7 +206,7 @@ const timeline = [
         <div class="prose">
           <p>More than 460 lakes sit within 25 miles of Brainerd. The one that made the letterhead is Gull — about 9,947 acres, 80 feet at the deepest hole, 38 miles of shore, chained to a 13,000-acre system that cabin families memorize like streets.</p>
           <p>The chain is Gull and Upper Gull, Round, Love, Roy, Margaret, Spring, Bass, plus Steamboat Bay and Wilson's Bay. Nisswa and Spider get counted depending on who is holding the map. The Corps raised the water when Gull Lake Dam went in around 1912–13. More than 2,500 homes now face that water.</p>
-          <p>Hole-in-the-Day Bay is named for the Ojibwe leader Bagone-giizhig. In summer it is docks and golf. In January, if the ice will hold, it becomes a temporary city of 10,000 anglers.</p>
+          <p>Hole-in-the-Day Bay keeps the Younger’s English name. In summer it is docks and golf. In January, if the ice will hold, it becomes a temporary city of 10,000 anglers — a gathering on water that was a homeland first.</p>
         </div>
       </div>
       <figure class="photo">
@@ -160,8 +216,8 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter" id="resorts">
-    <span class="chapter-num">04</span>
+  <section class="chapter paper" id="resorts">
+    <span class="chapter-num">05</span>
     <div class="wrap">
       <p class="kicker">Neighbors on the peninsula</p>
       <h2>The Maddens and the Craguns</h2>
@@ -197,8 +253,8 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter paper" id="bir">
-    <span class="chapter-num">05</span>
+  <section class="chapter" id="bir">
+    <span class="chapter-num">06</span>
     <div class="wrap split">
       <div>
         <p class="kicker">Donnybrooke · 1968</p>
@@ -225,8 +281,8 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter" id="ice">
-    <span class="chapter-num">06</span>
+  <section class="chapter paper" id="ice">
+    <span class="chapter-num">07</span>
     <div class="wrap split">
       <figure class="photo">
         <img src={img.ice} alt="Vast frozen northern lake under winter sky" />
@@ -250,10 +306,10 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter paper" id="events">
+  <section class="chapter" id="events">
     <div class="wrap">
       <p class="kicker">The years people retell</p>
-      <h2>From trestle to Zoo camp</h2>
+      <h2>From the bay to the Zoo camp</h2>
       <div class="grid-2">
         {events.map(([meta, title, text]) => (
           <article class="card"><p class="meta">{meta}</p><h3>{title}</h3><p>{text}</p></article>
@@ -262,7 +318,7 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter" id="people">
+  <section class="chapter paper" id="people">
     <div class="wrap">
       <p class="kicker">Faces of the crossing</p>
       <h2>People the town remembers</h2>
@@ -274,7 +330,7 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter paper" id="timeline">
+  <section class="chapter" id="timeline">
     <div class="wrap">
       <p class="kicker">A longer century</p>
       <h2>Timeline</h2>
@@ -286,18 +342,18 @@ const timeline = [
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter paper">
     <div class="wrap">
       <p class="kicker">Still here</p>
       <h2>What remains</h2>
       <div class="prose">
-        <p>Madden's is still a family peninsula. Cragun's still says Gull Lake on the sign. BIR still shakes the pines in August. Every winter the Jaycees still ask the ice if it will hold.</p>
+        <p>The bay still says Hole-in-the-Day. Crow Wing is a state park where a village used to stand. Madden's is still a family peninsula. Cragun's still says Gull Lake on the sign. BIR still shakes the pines in August. Every winter the Jaycees still ask the ice if it will hold.</p>
       </div>
       <div class="stat-row">
+        <div class="stat"><b>1836</b><span>Gull Lake village founded</span></div>
+        <div class="stat"><b>1868</b><span>Hole-in-the-Day killed</span></div>
         <div class="stat"><b>9,947</b><span>Acres of Gull itself</span></div>
         <div class="stat"><b>10k+</b><span>Anglers on the bay in January</span></div>
-        <div class="stat"><b>85 yrs</b><span>Craguns on the lake</span></div>
-        <div class="stat"><b>4 gen</b><span>Maddens still on the peninsula</span></div>
       </div>
     </div>
   </section>
@@ -305,7 +361,7 @@ const timeline = [
   <footer>
     <div class="wrap">
       <p>Built with Astro. <a href="https://github.com/KristineMK72/brainerd-history">GitHub</a> · <a href="https://brainerd-history.vercel.app">Live site</a></p>
-      <p style="margin-top:0.8rem">Sources: Crow Wing County Historical Society; Madden's and Cragun's official histories; Brainerd Dispatch resort reporting; BIR; NHRA; Jaycees Ice Extravaganza; Minnesota DNR / Gull Chain figures. Landscape photos are Unsplash stand-ins for the chain, ice, and resorts; the water tower is Wikimedia Commons (Todd Murray).</p>
+      <p style="margin-top:0.8rem">Sources: MNopedia on Bagone-giizhig; Anton Treuer, <em>The Assassination of Hole in the Day</em>; Brainerd Dispatch; Crow Wing County Historical Society; Madden's and Cragun's official histories; BIR; NHRA; Jaycees Ice Extravaganza; Minnesota DNR / Gull Chain figures. Landscape photos are Unsplash stand-ins; the water tower is Wikimedia Commons (Todd Murray).</p>
     </div>
   </footer>
 </Base>
