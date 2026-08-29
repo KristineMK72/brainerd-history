@@ -6,10 +6,13 @@ interface Props {
   description?: string;
 }
 
+const site = "https://brainerd-history.vercel.app";
 const {
   title = "Brainerd — A Crossing on the Mississippi",
   description = "A visual history of Brainerd, Minnesota: Ojibwe homelands, railroad town, Gull Lake resorts, Paul Bunyan Land, BIR, and the ice.",
 } = Astro.props;
+const image = `${site}/og.jpg`;
+const imageSquare = `${site}/og-square.jpg`;
 ---
 
 <!doctype html>
@@ -19,9 +22,34 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#07140e" />
+    <link rel="canonical" href={site} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brainerd — A Crossing on the Mississippi" />
+    <meta property="og:url" content={site} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Brainerd, 1870 — A Crossing on the Mississippi, with the talking Paul Bunyan statue" />
+    <meta property="og:image" content={imageSquare} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <link rel="image_src" href={image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content="Brainerd — A Crossing on the Mississippi" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
